@@ -16,7 +16,7 @@ Use the following options to import the collection into Postman:
 
 ## Define Environment Variables
 
-This collection utilizes the following variables which should be defined within one of the scopes in Postman.
+This collection utilizes the following variables which should be defined within one of the scopes in Postman. The example variables are defined within the collection. (Go to the Variable tab under edit collection)
 
 | Variable          | Description                                        | Example           |
 |-------------------|----------------------------------------------------|-------------------|
@@ -26,4 +26,9 @@ This collection utilizes the following variables which should be defined within 
 | {{serial_number}} | Example of serial number to call                   | C02000QWFVH6      |
 
 ## Getting Started
+
 After the collection has been imported and valid values have been defined for the variables, the Authentication request should be called to create a cookie for the MunkiReport instance. Additional requests should be able to use this session.
+
+## Troubleshooting
+
+You may need to disable the SSL certificate verification to talk to the MunkiReport server. Or that could just be a weird issue with my certs.
