@@ -10,7 +10,7 @@ This article describes the recommended Postman configuration and setup process t
 
 Use the following options to import the collection into Postman:
 
-* Click the [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/c45e1e3efc209186c272) button to automatically import the collection into your Postman app.
+* Click the [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c45e1e3efc209186c272) button to automatically import the collection into your Postman app.
 * In Postman, click File >> Import.
   * Download the JSON included in this repo and select the .json file.
 
