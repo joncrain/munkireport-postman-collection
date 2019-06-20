@@ -1,4 +1,4 @@
-# MunkiReport-postman-api
+# MunkiReport Postman Collection
 
 ## Overview
 
