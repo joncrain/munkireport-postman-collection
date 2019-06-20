@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "f9abe092-7490-4adb-8c59-5d47536c3a98",
+		"name": "MunkiReport",
+		"description": "Example API queries for MunkiReport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "{{mr-login}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{mr-password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{mr-url}}/index.php?/auth/login",
+					"protocol": "https",
+					"host": [
+						"{{mr-url}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/auth/login",
+							"value": null
+						}
+					]
+				},
+				"description": "Initial authentication for MunkiReport cookie"
+			},
+			"response": []
+		},
+		{
+			"name": "Machine Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "columns[0][name]",
+							"value": "machine.serial_number",
+							"type": "text"
+						},
+						{
+							"key": "columns[1][name]",
+							"value": "machine.hostname",
+							"type": "text"
+						},
+						{
+							"key": "columns[2][name]",
+							"value": "machine.machine_model",
+							"type": "text"
+						},
+						{
+							"key": "columns[3][name]",
+							"value": "machine.machine_desc",
+							"type": "text"
+						},
+						{
+							"key": "columns[4][name]",
+							"value": "machine.cpu",
+							"type": "text"
+						},
+						{
+							"key": "columns[5][name]",
+							"value": "machine.cpu_arch",
+							"type": "text"
+						},
+						{
+							"key": "columns[6][name]",
+							"value": "machine.os_version",
+							"type": "text"
+						},
+						{
+							"key": "columns[7][name]",
+							"value": "machine.physical_memory",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{mr-url}}/index.php?/datatables/data",
+					"protocol": "https",
+					"host": [
+						"{{mr-url}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/datatables/data",
+							"value": null
+						}
+					]
+				},
+				"description": "Gathers the machine data"
+			},
+			"response": []
+		},
+		{
+			"name": "Business Unit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://{{mr-url}}/index.php?/unit/get_data",
+					"protocol": "https",
+					"host": [
+						"{{mr-url}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/unit/get_data",
+							"value": null
+						}
+					]
+				},
+				"description": "This will return information about the current Business Unit."
+			},
+			"response": []
+		},
+		{
+			"name": "Machine Groups",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://{{mr-url}}/index.php?/unit/get_machine_groups",
+					"protocol": "https",
+					"host": [
+						"{{mr-url}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/unit/get_machine_groups",
+							"value": null
+						}
+					]
+				},
+				"description": "This will return information about the current machine group."
+			},
+			"response": []
+		},
+		{
+			"name": "Installed Modules",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://{{mr-url}}/index.php?/install/dump_modules/env",
+					"protocol": "https",
+					"host": [
+						"{{mr-url}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/install/dump_modules/env",
+							"value": null
+						}
+					]
+				},
+				"description": "This will return information about the currently installed modules. (not enabled)"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Machine",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://{{mr-url}}/index.php?/manager/delete_machine/{{serial_number}}",
+					"protocol": "https",
+					"host": [
+						"{{mr-url}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/manager/delete_machine/{{serial_number}}",
+							"value": null
+						}
+					]
+				},
+				"description": "Endpoint for deleting a machine record."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f0f20be8-1921-4a96-a31e-f502203d8327",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7d4a596a-0eee-43bb-bcfa-839e8cb9bb88",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "4a0ded9e-8bce-45a3-8b38-71b71d95dce1",
+			"key": "mr-login",
+			"value": "your-username",
+			"type": "string"
+		},
+		{
+			"id": "5c6186c7-975e-4e55-a7a7-4588c7a16e76",
+			"key": "mr-password",
+			"value": "your-password",
+			"type": "string"
+		},
+		{
+			"id": "42e19c7c-0f38-430b-808d-006a8b4eb5c0",
+			"key": "mr-url",
+			"value": "munki.company.com",
+			"type": "string"
+		},
+		{
+			"id": "eaddf2f8-a7ad-47e3-a36f-9dbc5091c254",
+			"key": "serial_number",
+			"value": "SERIAL",
+			"type": "string"
+		}
+	]
+}
